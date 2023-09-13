@@ -11,6 +11,8 @@ export class ServerComponent {
   status: string = 'OFFLINE';
   allowNewServer: boolean = false;
   createServer: string = 'No servers created!'
+  serverName: string = ''
+
 
   constructor() {
     setTimeout(() => {
@@ -19,6 +21,10 @@ export class ServerComponent {
   }
 
   onCreateServer() {
-    this.createServer = 'New Server Created!'
+    this.createServer = `'Server: ${this.serverName} Created!'`
+  }
+
+  onUpdateServerName(event: Event) {
+    this.serverName = (<HTMLInputElement>event.target).value;
   }
 }
