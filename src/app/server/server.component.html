@@ -1,1 +1,9 @@
-<p>Server component</p>
+<p>ServerID: {{ serverID }}</p>
+<p>Status: {{ status }}</p><br><br>
+<button class="btn btn-primary"
+        [disabled]="!allowNewServer"
+        (click)="onCreateServer()">Add Server</button>
+<h1 [innerText]="createServer"></h1>
+<p>{{ allowNewServer }}</p>
+OR
+<p [innerText]="allowNewServer"></p><br>
